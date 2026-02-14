@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --color-romantic-dark: #1a0505;
+  --color-romantic-red: #8a1c1c;
+  --color-romantic-pink: #ff9eb5;
+  --color-romantic-gold: #d4af37;
+  --color-romantic-cream: #f5e6e8;
+
+  --font-playfair: 'Playfair Display', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fadeIn 2s ease-out forwards;
+  --animate-slide-up: slideUp 1s ease-out forwards;
+  --animate-bg-pulse: bg-pulse 4s ease-in-out infinite;
+
+  @keyframes heartbeat {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bg-pulse {
+
+    0%,
+    100% {
+      opacity: 0.8;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  --background: #0a0101;
+  --foreground: #f5e6e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-cormorant);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8a1c1c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Custom Utilities */
+.text-shadow-romantic {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 158, 181, 0.5), 0 0 20px rgba(255, 158, 181, 0.3), 0 0 40px rgba(255, 158, 181, 0.1);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.bg-heartbeat {
+  background-image:
+    radial-gradient(circle at center, #2a0505 0%, transparent 70%),
+    linear-gradient(to bottom, #0a0101, #1a0505);
+  animation: bg-pulse 4s ease-in-out infinite;
+}
+
+.glass-panel {
+  background: rgba(26, 5, 5, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(138, 28, 28, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
